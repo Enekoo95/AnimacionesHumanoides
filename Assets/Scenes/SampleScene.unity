@@ -553,7 +553,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 832575519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
@@ -751,6 +752,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b8b8c07285e1b949bc61084c095fc5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 795827779}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b8b8c07285e1b949bc61084c095fc5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 795827780}
     - targetCorrespondingSourceObject: {fileID: 1664083765829960058, guid: 0b8b8c07285e1b949bc61084c095fc5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1612044728}
@@ -890,7 +894,7 @@ MonoBehaviour:
   animator: {fileID: 795827775}
   walkSpeed: 2
   runSpeed: 5
-  playerRagdoll: {fileID: 0}
+  playerRagdoll: {fileID: 795827778}
 --- !u!4 &795827777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0b8b8c07285e1b949bc61084c095fc5c, type: 3}
@@ -931,6 +935,21 @@ MonoBehaviour:
   enableLookAtIK: 1
   lookAtTarget: {fileID: 1822836211}
   lookAtWeight: 1
+--- !u!114 &795827780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795827774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e008ca5d8902284ebc6b8eee1919ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 795827775}
+  target: {fileID: 1822836211}
+  ikWeight: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,12 +992,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832575517}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: -1.928363, z: 2.2981334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 410087041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890330991 stripped
 GameObject:
@@ -1868,7 +1887,7 @@ GameObject:
   - component: {fileID: 1822836209}
   - component: {fileID: 1822836208}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: IK Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1968,7 +1987,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
-  - {fileID: 832575519}
   - {fileID: 1510041078}
   - {fileID: 795827773}
   - {fileID: 1822836211}
