@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 2f;
     public float runSpeed = 5f;
 
+    [Header("Ragdoll")]
+    public PlayerRagdoll playerRagdoll; // Arrastrar el objeto con PlayerRagdoll en el Inspector
+
     void Start()
     {
         animator.applyRootMotion = false;
@@ -14,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Si el Ragdoll está activo, no permitir movimiento ni animaciones
+        if (playerRagdoll != null && playerRagdoll.IsRagdoll)
+            return;
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
@@ -25,9 +32,6 @@ public class PlayerMovement : MonoBehaviour
         bool running = Input.GetKey(KeyCode.LeftShift);
 
         float speed = running ? runSpeed : walkSpeed;
-
-        // Debug correr
-        Debug.Log("Running SHIFT: " + running);
 
         // Movimiento físico
         if (input.sqrMagnitude > 0.01f)
@@ -47,18 +51,7 @@ public class PlayerMovement : MonoBehaviour
         float animSpeed = 0f;
 
         if (input.sqrMagnitude > 0.01f)
-        {
             animSpeed = running ? 1f : 0.3f;
-
-            if (running)
-                Debug.Log("Animación RUN activada (Speed = 1)");
-            else
-                Debug.Log("Animación WALK activada (Speed = 0.3)");
-        }
-        else
-        {
-            Debug.Log("Animación IDLE activada (Speed = 0)");
-        }
 
         animator.SetFloat("Speed", animSpeed);
 
