@@ -1,0 +1,4 @@
+# AnimacionesHumanoides
+Todo lo que se necesita saber de este proyecto esta en la escena SampleScene. Todo lo que tiene que ver con animaciones esta en el animator controller llamado AnimacionNormal, ahi puede encontrar un blend tree con el que tienes animaciones de idle, andar y correr y despues hay dos animaciones separadas para bailar.
+Hay 4 scripts: PlayerMovement que controla todo movimiento que tenga el personaje, PlayerRagdoll que activa y desactiva el ragdoll del personaje, PlayerIK que hace que el personaje este mirando a un punto y se puede activar y desactivar y para terminar IKPointToTarget que hace que puedas apuntar a un target.
+Los controles: WASD para el movimiento, manteniendo el shift corres, si mantienes la B bailas twerking y si mantienes la M bailas bachata, con la R activas y desactivas el ragdoll. Si pulsas la E miras y dejas de mirar hacia un target y con la Q apuntas con la mano hacia un target
